@@ -35,3 +35,19 @@ class CustomTabBarManager{
         return tabBarArray
     }
 }
+
+class DummyDataManager{
+    static func create() -> [[String]]{
+        var dataArray: [[String]] = []
+        
+        let item1 = ["Hi", "tableView", "swift", "collectionView", "Uikit"]
+        let item2 = ["Gustav", "Klimt", "Italian", "Horticultural", "Landscape", "1913"]
+        let item3 = ["Climb", "Bouldering Gym", "Trial", "Starter", "Block"]
+        
+        dataArray.append(item1)
+        dataArray.append(item2)
+        dataArray.append(item3)
+        
+        return dataArray
+    }
+}
