@@ -24,7 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="M6a-4N-hlh"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xL6-Q7-2xU">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="xL6-Q7-2xU">
                                     <size key="itemSize" width="140" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -66,11 +66,15 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="t3E-7V-rf5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vXg-xz-khF"/>
+                                </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hRc-ZM-tEY">
                                 <rect key="frame" x="0.0" y="137" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r4S-wb-Ir0">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="r4S-wb-Ir0">
                                     <size key="itemSize" width="414" height="736"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -96,7 +100,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKK-PG-0hQ">
-                                                                        <rect key="frame" x="10" y="11" width="394" height="22"/>
+                                                                        <rect key="frame" x="20" y="11" width="374" height="22"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="Ztb-d6-nOo"/>
                                                                         </constraints>
@@ -106,8 +110,8 @@
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="CKK-PG-0hQ" secondAttribute="trailing" constant="10" id="4ZT-O5-5EK"/>
-                                                                    <constraint firstItem="CKK-PG-0hQ" firstAttribute="leading" secondItem="3bm-vi-rNc" secondAttribute="leading" constant="10" id="mXN-40-FWO"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="CKK-PG-0hQ" secondAttribute="trailing" constant="20" id="4ZT-O5-5EK"/>
+                                                                    <constraint firstItem="CKK-PG-0hQ" firstAttribute="leading" secondItem="3bm-vi-rNc" secondAttribute="leading" constant="20" id="mXN-40-FWO"/>
                                                                     <constraint firstItem="CKK-PG-0hQ" firstAttribute="centerY" secondItem="3bm-vi-rNc" secondAttribute="centerY" id="zpR-KB-B05"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
@@ -144,6 +148,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tabBarCollectionView" destination="72m-Sz-FWi" id="Pgz-ec-v0n"/>
+                        <outlet property="tabResultCollectionView" destination="hRc-ZM-tEY" id="6Hg-RN-mlK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
