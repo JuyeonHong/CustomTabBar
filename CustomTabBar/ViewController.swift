@@ -14,10 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var tabResultCollectionView: UICollectionView!
     
     var tabBarArray: [CustomTabBar]?
+    var dataArray: [[String]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarArray = CustomTabBarManager.create()
+        dataArray = DummyDataManager.create()
     }
 }
 
@@ -48,7 +50,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         else if collectionView == tabResultCollectionView{
             let cell = tabResultCollectionView.dequeueReusableCell(withReuseIdentifier: "TabResultCollectionViewCell", for: indexPath) as! TabResultCollectionViewCell
-            
+            cell.dataArray = dataArray?[indexPath.row]
             return cell
             
         }
@@ -57,7 +59,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == tabBarCollectionView{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TabBarCollectionViewCell", for: indexPath) as! TabBarCollectionViewCell
+            tabResultCollectionView.scrollToItem(at: IndexPath(item: indexPath.row, section: 0), at: .centeredHorizontally, animated: true)
+            
             tabBarArray?.forEach { $0.isSelected = false }
             tabBarArray?[indexPath.row].isSelected = true
             tabBarCollectionView.reloadData()

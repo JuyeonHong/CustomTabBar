@@ -11,6 +11,11 @@ import UIKit
 class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var label: UILabel!
+    var textData: String!{
+        didSet{
+            setUI()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,6 +23,10 @@ class ResultTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func setUI(){
+        label.text = textData
     }
 
 }
