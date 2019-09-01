@@ -15,6 +15,7 @@
 		13106DA3231B9C0E004B11CA /* TabBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106DA2231B9C0E004B11CA /* TabBarCollectionViewCell.swift */; };
 		13106DA5231B9C1C004B11CA /* TabResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106DA4231B9C1C004B11CA /* TabResultCollectionViewCell.swift */; };
 		13106DA7231B9CA6004B11CA /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106DA6231B9CA6004B11CA /* ResultTableViewCell.swift */; };
+		13106DA9231B9EB8004B11CA /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13106DA8231B9EB8004B11CA /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		13106DA2231B9C0E004B11CA /* TabBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		13106DA4231B9C1C004B11CA /* TabResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		13106DA6231B9CA6004B11CA /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		13106DA8231B9EB8004B11CA /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				13106DA2231B9C0E004B11CA /* TabBarCollectionViewCell.swift */,
 				13106DA4231B9C1C004B11CA /* TabResultCollectionViewCell.swift */,
 				13106DA6231B9CA6004B11CA /* ResultTableViewCell.swift */,
+				13106DA8231B9EB8004B11CA /* CustomTabBar.swift */,
 				13106D97231B975A004B11CA /* Assets.xcassets */,
 				13106D99231B975A004B11CA /* LaunchScreen.storyboard */,
 				13106D9C231B975A004B11CA /* Info.plist */,
@@ -148,6 +151,7 @@
 				13106D91231B9759004B11CA /* AppDelegate.swift in Sources */,
 				13106DA3231B9C0E004B11CA /* TabBarCollectionViewCell.swift in Sources */,
 				13106DA7231B9CA6004B11CA /* ResultTableViewCell.swift in Sources */,
+				13106DA9231B9EB8004B11CA /* CustomTabBar.swift in Sources */,
 				13106DA5231B9C1C004B11CA /* TabResultCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
