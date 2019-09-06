@@ -97,6 +97,10 @@ extension ViewController: UIScrollViewDelegate{
             
             offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: 0)
             targetContentOffset.pointee = offset
+            
+            tabBarArray?.forEach { $0.isSelected = false }
+            tabBarArray?[indexPath.row].isSelected = true
+            tabBarCollectionView.reloadData()
         }
     }
 }
