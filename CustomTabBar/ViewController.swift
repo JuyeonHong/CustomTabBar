@@ -20,6 +20,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tabBarArray = CustomTabBarManager.create()
         dataArray = DummyDataManager.create()
+        
+        let cellWidth = tabResultCollectionView.bounds.width
+        let cellHeight = tabResultCollectionView.bounds.height
+        
+        if let layout = tabResultCollectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+            layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+            layout.minimumLineSpacing = 0
+        }
+        
+        tabResultCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
     }
 }
 
@@ -67,4 +77,26 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
     }
     
+}
+
+extension ViewController: UIScrollViewDelegate{
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if let layout = tabResultCollectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+            // targetContentOffset: 스크롤 속도가 줄어들어 정지될 때 예상되는 위치
+            let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+            var offset = targetContentOffset.pointee
+            let pageIndex = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+            var roundedIndex = round(pageIndex)
+            
+            if scrollView.contentOffset.x > targetContentOffset.pointee.x {
+                roundedIndex = floor(pageIndex)
+            }
+            else {
+                roundedIndex = ceil(pageIndex)
+            }
+            
+            offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: 0)
+            targetContentOffset.pointee = offset
+        }
+    }
 }
