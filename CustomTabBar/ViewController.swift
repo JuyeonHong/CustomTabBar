@@ -99,7 +99,7 @@ extension ViewController: UIScrollViewDelegate{
             targetContentOffset.pointee = offset
             
             tabBarArray?.forEach { $0.isSelected = false }
-            tabBarArray?[indexPath.row].isSelected = true
+            tabBarArray?[Int(roundedIndex)].isSelected = true
             tabBarCollectionView.reloadData()
         }
     }
