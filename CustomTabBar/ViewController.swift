@@ -31,6 +31,19 @@ class ViewController: UIViewController {
         
         tabResultCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        configureCollectionViewLayoutItemSize()
+    }
+    
+    private func configureCollectionViewLayoutItemSize() {
+        if let layout = tabResultCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            layout.itemSize = CGSize(width: layout.collectionView?.frame.width ?? 414, height: layout.collectionView?.frame.height ?? 725)
+        }
+    }
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
